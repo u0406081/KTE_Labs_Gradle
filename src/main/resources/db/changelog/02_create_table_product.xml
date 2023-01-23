@@ -1,0 +1,18 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="Vashetkov" id="02">
+        <createTable tableName="product">
+            <column name="id" type="bigint" >
+                <constraints primaryKey="true" primaryKeyName="product_id_pk" />
+            </column>
+            <column name="name" type="varchar(250)" />
+            <column name="price" type="double" />
+            <column name="description" type="varchar(250)" />
+        </createTable>
+        <addAutoIncrement tableName="product" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
+    </changeSet>
+</databaseChangeLog>

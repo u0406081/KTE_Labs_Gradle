@@ -1,0 +1,18 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="Vashetkov" id="01">
+        <createTable  tableName="client">
+            <column name="id" type="bigint" >
+                <constraints primaryKey="true" primaryKeyName="client_id_pk" />
+            </column>
+            <column name="name" type="varchar(250)" />
+            <column name="individual_discount_1" type="int" />
+            <column name="individual_discount_2" type="int" />
+        </createTable>
+        <addAutoIncrement tableName="client" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
+    </changeSet>
+</databaseChangeLog>

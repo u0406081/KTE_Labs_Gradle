@@ -1,0 +1,22 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="Vashetkov" id="06">
+        <createTable tableName="discount">
+            <column name="id" type="bigint" >
+                <constraints primaryKey="true" primaryKeyName="discount_id_pk" />
+            </column>
+            <column name="datetime" type="datetime" />
+            <column name="discount" type="int" />
+            <column name="product_id" type="bigint" />
+            <column name="current" type="boolean" />
+        </createTable>
+        <addAutoIncrement tableName="discount" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
+        <addForeignKeyConstraint baseTableName="discount" baseColumnNames="product_id"
+                                 constraintName="discount_product_id_fk" referencedTableName="product"
+                                 referencedColumnNames="id" />
+    </changeSet>
+</databaseChangeLog>

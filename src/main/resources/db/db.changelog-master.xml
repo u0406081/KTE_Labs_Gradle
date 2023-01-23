@@ -1,0 +1,16 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <include file="changelog/01_create_table_client.xml" relativeToChangelogFile="true" />
+    <include file="changelog/02_create_table_product.xml" relativeToChangelogFile="true" />
+    <include file="changelog/03_create_table_fact_of_sale.xml" relativeToChangelogFile="true" />
+    <include file="changelog/04_create_table_position.xml" relativeToChangelogFile="true" />
+    <include file="changelog/05_create_table_estimate.xml" relativeToChangelogFile="true" />
+    <include file="changelog/06_create_table_discount.xml" relativeToChangelogFile="true" />
+    <include file="changelog/07_insert_client.xml" relativeToChangelogFile="true" />
+    <include file="changelog/08_insert_product.xml" relativeToChangelogFile="true" />
+</databaseChangeLog>

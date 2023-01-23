@@ -1,0 +1,24 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="Vashetkov" id="05">
+        <createTable tableName="estimate">
+            <column name="id" type="bigint" >
+                <constraints primaryKey="true" primaryKeyName="estimate_id_pk" />
+            </column>
+            <column name="client_id" type="bigint" />
+            <column name="product_id" type="bigint" />
+            <column name="estimate" type="int" />
+        </createTable>
+        <addAutoIncrement tableName="estimate" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
+        <addForeignKeyConstraint baseTableName="estimate" baseColumnNames="client_id"
+                                 constraintName="estimate_client_id_fk" referencedTableName="client"
+                                 referencedColumnNames="id" />
+        <addForeignKeyConstraint baseTableName="estimate" baseColumnNames="product_id"
+                                 constraintName="estimate_product_id_fk" referencedTableName="product"
+                                 referencedColumnNames="id" />
+    </changeSet>
+</databaseChangeLog>
